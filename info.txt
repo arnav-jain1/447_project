@@ -1,0 +1,37 @@
+DBMS Project Report 1 
+Omar Mohammed 
+Arnav Jain
+
+Intro: 
+Our scenario (mini world) is the NBA. Our mini world describes the relationship between players, their teams, and player stats. 
+
+Requirements Analysis:
+Our data will be pulled from the publically available 2022-2023 regular season NBA player stats. 
+NBA players each have a position, player ID, age, name, field goal percentage, 3 pointer percentage, minutes played and points per game. 
+NBA teams each have a win count, loss count, name, conference, color, home city, and abbreviation. 
+The relationship between players and teams, Plays_On, denotes the number of years any given player has played for any given team. 
+
+Constraints:
+Team abbreviation must be 3 letter string 
+Win count, loss count, age, and minutes are integers
+Position must be a string from the array: [C,PF,SF,SG,PG]
+Points per game (PPG), field goal percentage(FG%) and 3 point percentage(3P%) must be floats 
+No numeric value can be negative 
+Any abbreviation + player ID combination must be unique 
+PID is also unique
+
+Operations:
+Best scorer overall by team and position 
+Best player by position per team 
+Player ranking by position within age bracket independent of team 
+Minutes played per position ranked descendingly per team 
+Team wins ordered by player PPG 
+All players by team color 
+ 
+Relational Schema (Normalized):
+[* star * denotes primary keys]
+
+Team(*abrv*, name)
+Team_info(*abrv*,wins,loss,conf,city,color)
+Plays_for(*abrv*,*PID*,years)
+Player(*PID*,position,PPG,FG%,3P%,name,age,minutes)
